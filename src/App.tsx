@@ -10,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<MainPage />} />
+      <Route path="/MGPU_PRACTICE" element={<MainPage />} />
       <Route path="*" element={<></>} />
      </Routes>
     </BrowserRouter>

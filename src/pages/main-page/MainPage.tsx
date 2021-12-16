@@ -21,9 +21,9 @@ const LEFT_COLUMN_VALUES = ["0", "1", "3"];
 const RIGHT_COLUMN_VALUES = ["2"];
 
 const reorderDifferentLists = (
-  startList: ColumnItem[], 
-  endList: ColumnItem[], 
-  startIndex: number, 
+  startList: ColumnItem[],
+  endList: ColumnItem[],
+  startIndex: number,
   endIndex: number,
   setStart: (items: ColumnItem[]) => void,
   setEnd: (items: ColumnItem[]) => void
@@ -39,10 +39,10 @@ const reorderDifferentLists = (
 };
 
 const reorder = (
-  items: ColumnItem[], 
-  startIndex: number, 
-  endIndex: number, 
-  setItems: (items: ColumnItem[]) => void, 
+  items: ColumnItem[],
+  startIndex: number,
+  endIndex: number,
+  setItems: (items: ColumnItem[]) => void,
 ) => {
   const newItems = [...items];
   const [removed] = newItems.splice(startIndex, 1);
@@ -111,62 +111,68 @@ const MainPage = () => {
     <div className='root'>
       <DragDropContext onDragEnd={onDragEnd}>
         <div className="columns">
-          <Droppable droppableId={DropsEnum.left}>
-            {(provided, snapshot) => (
-              <div
-                className="column"
-                {...provided.droppableProps}
-                ref={provided.innerRef}
-              >
-                <p>Вопрос 1</p>
-                {leftColumn.map((item, index) => (
-                  <Draggable key={item.id} draggableId={item.id} index={index}>
-                    {(provided, snapshot) => (
+          <div className="column">
+            <p>Вопрос 1</p>
+            <Droppable droppableId={DropsEnum.left}>
+              {(provided, snapshot) => (
+                <div
+                  className='dropable'
+                  {...provided.droppableProps}
+                  ref={provided.innerRef}
+                >
 
-                      <div
-                        ref={provided.innerRef}
-                        {...provided.draggableProps}
-                        {...provided.dragHandleProps}
-                      >
-                        <Badge className="initial-item mb-10">
-                          {item.name}
-                        </Badge>
-                      </div>
+                  {leftColumn.map((item, index) => (
+                    <Draggable key={item.id} draggableId={item.id} index={index}>
+                      {(provided, snapshot) => (
 
-                    )}
-                  </Draggable>
-                ))}
-                {provided.placeholder}
-              </div>
-            )}
-          </Droppable>
-          <Droppable droppableId={DropsEnum.right}>
-            {(provided, snapshot) => (
-              <div
-                className="column"
-                {...provided.droppableProps}
-                ref={provided.innerRef}
-              >
-                <p>Вопрос 2</p>
-                {rigthColumn.map((item, index) => (
-                  <Draggable key={item.id} draggableId={item.id} index={index}>
-                    {(provided, snapshot) => (
-                      <div
-                        ref={provided.innerRef}
-                        {...provided.draggableProps}
-                        {...provided.dragHandleProps}
-                      >
-                        <Badge className="initial-item mb-10">
-                          {item.name}
-                        </Badge>
-                      </div>
-                    )}
-                  </Draggable>
-                ))}
-                {provided.placeholder}
-              </div>
-            )}
-          </Droppable>
+                        <div
+                          ref={provided.innerRef}
+                          {...provided.draggableProps}
+                          {...provided.dragHandleProps}
+                          style={{ ...provided.draggableProps.style }}
+                        >
+                          <Badge className="initial-item mb-10">
+                            {item.name}
+                          </Badge>
+                        </div>
+
+                      )}
+                    </Draggable>
+                  ))}
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </div>
+          <div className="column">
+            <p>Вопрос 1</p>
+            <Droppable droppableId={DropsEnum.right}>
+              {(provided, snapshot) => (
+                <div
+                  className="dropable"
+                  {...provided.droppableProps}
+                  ref={provided.innerRef}
+                >
+                  {rigthColumn.map((item, index) => (
+                    <Draggable key={item.id} draggableId={item.id} index={index}>
+                      {(provided, snapshot) => (
+                        <div
+                          ref={provided.innerRef}
+                          {...provided.draggableProps}
+                          {...provided.dragHandleProps}
+                        >
+                          <Badge className="initial-item mb-10">
+                            {item.name}
+                          </Badge>
+                        </div>
+                      )}
+                    </Draggable>
+                  ))}
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </div>
         </div>
         <div className="row">
           <Droppable droppableId={DropsEnum.initial} direction='horizontal'>
