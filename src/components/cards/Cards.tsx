@@ -1,4 +1,5 @@
 import React, { FC, useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 import './styles.css';
 
@@ -12,6 +13,8 @@ const cards = [
 ];
 
 const Cards: FC = () => {
+  const navigate = useNavigate();
+
   const [firstChecked, setFirstChecked] = useState('');
   const [secondChecked, setSecondChecked] = useState('');
   const [checked, setChecked] = useState<string[]>([]);
@@ -56,17 +59,28 @@ const Cards: FC = () => {
     }
   };
 
+  const onSubmit = () => {
+    if (checked.length === 6) {
+      navigate('/table');
+    } else {
+      alert('Неверно!');
+    }
+  }
+
   return (
-    <div className='card-row'>
-      {cards.map(({ title, id }) => {
-        return (
-          <div key={id} className={getCardClass(id)} onClick={() => onCardClick(id)}>
-            <div className='card__face card__face--front'></div>
-            <div className='card__face card__face--back'>{title}</div>
-          </div>
-        )
-      })}
-    </div>
+    <>
+      <div className='card-row'>
+        {cards.map(({ title, id }) => {
+          return (
+            <div key={id} className={getCardClass(id)} onClick={() => onCardClick(id)}>
+              <div className='card__face card__face--front'></div>
+              <div className='card__face card__face--back'>{title}</div>
+            </div>
+          )
+        })}
+      </div>
+      <button onClick={onSubmit} className='button'>Проверить</button>
+    </>
   );
 };
 

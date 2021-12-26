@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { DragDropContext, Droppable, Draggable, DropResult, ResponderProvided } from "react-beautiful-dnd";
+import { useNavigate } from 'react-router-dom';
+
 import Badge from '../../components/badge/Badge';
 
 import './styles.css';
@@ -53,6 +55,8 @@ const reorder = (
 };
 
 const DragNDrop = () => {
+  const navigate = useNavigate();
+
   const [leftColumn, setLeftColumn] = useState<ColumnItem[]>([]);
   const [rigthColumn, setRigthColumn] = useState<ColumnItem[]>([]);
   const [initial, setInitial] = useState<ColumnItem[]>(ITEMS);
@@ -103,6 +107,18 @@ const DragNDrop = () => {
       if (sourceId === DropsEnum.left) {
         reorderDifferentLists(leftColumn, initial, sourceIndex, destinationIndex, setInitial, setLeftColumn);
       }
+    }
+  }
+
+  const onSubmit = () =>{
+    const left = leftColumn.map(({ id }) => id);
+    const right = rigthColumn.map(({ id }) => id);
+    left.sort((a, b) => +a - +b);
+
+    if (left.join() === LEFT_COLUMN_VALUES.join() && right.join() === RIGHT_COLUMN_VALUES.join()) {
+      navigate('/cards');
+    } else {
+      alert('Неверно!');
     }
   }
 
@@ -205,6 +221,7 @@ const DragNDrop = () => {
           </Droppable>
         </div>
       </DragDropContext>
+      <button onClick={onSubmit} className='button'>Проверить</button>
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react'
 import { DragDropContext, Draggable, Droppable, DropResult, ResponderProvided } from 'react-beautiful-dnd';
+import { useNavigate } from 'react-router-dom';
 
 import './styles.css';
 
@@ -37,6 +38,8 @@ const reorder = (
 };
 
 const Columns: FC = () => {
+  const navigate = useNavigate();
+
   const [tableValues, setTableValues] = useState<Column[]>(values);
 
   const onDragEnd = (result: DropResult, provided: ResponderProvided) => {
@@ -56,7 +59,7 @@ const Columns: FC = () => {
     const tableVlauesId = tableValues.map(item => item.value);
     
     if (lablesId.join() === tableVlauesId.join()) {
-      alert('Верно!');
+      navigate('/checkboxes');
     } else {
       alert('Попробуйте еще раз!');
     }
@@ -65,7 +68,6 @@ const Columns: FC = () => {
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <div className='table-container'>
-        <button onClick={onSubmit} className='button'>Проверить</button>
         <div className='table'>
           <div className='table-column'>
             {labels.map(({ text, value }) => (
@@ -96,6 +98,7 @@ const Columns: FC = () => {
           </Droppable>
         </div>
       </div>
+      <button onClick={onSubmit} className='button'>Проверить</button>
     </DragDropContext>
   );
 
