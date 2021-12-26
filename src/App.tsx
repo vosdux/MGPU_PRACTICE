@@ -3,8 +3,9 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
 import DND from './pages/d-n-d/DND';
 import CardsPage from './pages/cards/CardsPage';
-import TablePage from './pages/TablePage/TablePage';
-import Checkboxes from './components/checkboxes/Checkboxes';
+import TablePage from './pages/table-page/TablePage';
+import CheckboxPage from './pages/checkbox-page/CheckboxPage';
+import ImagePage from './pages/image-page/ImagePage';
 
 import './App.css';
 
@@ -15,8 +16,8 @@ function App() {
       <Route path="/dnd" element={<DND />} />
       <Route path="/cards" element={<CardsPage />} />
       <Route path="/table" element={<TablePage />} />
-      <Route path="/checkboxes" element={<Checkboxes />} />
-      <Route path="/MGPU_PRACTICE" element={<DND />} />
+      <Route path="/checkboxes" element={<CheckboxPage />} />
+      <Route path="/image" element={<ImagePage />} />
       <Route path="*" element={<DND />} />
      </Routes>
     </BrowserRouter>
