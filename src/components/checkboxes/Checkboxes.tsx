@@ -30,7 +30,7 @@ const Checkboxes = () => {
     newValues.sort((a, b) => a - b);
 
     if (newValues.join() === SUCCESS_VALUES.join()) {
-      navigate('/images');
+      navigate('/MGPU_PRACTICE/images');
     } else {
       alert('Неверно!');
     }

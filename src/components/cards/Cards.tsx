@@ -61,7 +61,7 @@ const Cards: FC = () => {
 
   const onSubmit = () => {
     if (checked.length === 6) {
-      navigate('/table');
+      navigate('/MGPU_PRACTICE/table');
     } else {
       alert('Неверно!');
     }

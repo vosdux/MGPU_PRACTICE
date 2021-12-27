@@ -13,11 +13,11 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/dnd" element={<DND />} />
-      <Route path="/cards" element={<CardsPage />} />
-      <Route path="/table" element={<TablePage />} />
-      <Route path="/checkboxes" element={<CheckboxPage />} />
-      <Route path="/image" element={<ImagePage />} />
+      <Route path="/MGPU_PRACTICE/dnd" element={<DND />} />
+      <Route path="/MGPU_PRACTICE/cards" element={<CardsPage />} />
+      <Route path="/MGPU_PRACTICE/table" element={<TablePage />} />
+      <Route path="/MGPU_PRACTICE/checkboxes" element={<CheckboxPage />} />
+      <Route path="/MGPU_PRACTICE/image" element={<ImagePage />} />
       <Route path="*" element={<DND />} />
      </Routes>
     </BrowserRouter>

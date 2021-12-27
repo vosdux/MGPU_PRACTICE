@@ -59,7 +59,7 @@ const Columns: FC = () => {
     const tableVlauesId = tableValues.map(item => item.value);
     
     if (lablesId.join() === tableVlauesId.join()) {
-      navigate('/checkboxes');
+      navigate('/MGPU_PRACTICE/checkboxes');
     } else {
       alert('Попробуйте еще раз!');
     }

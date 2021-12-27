@@ -116,7 +116,7 @@ const DragNDrop = () => {
     left.sort((a, b) => +a - +b);
 
     if (left.join() === LEFT_COLUMN_VALUES.join() && right.join() === RIGHT_COLUMN_VALUES.join()) {
-      navigate('/cards');
+      navigate('/MGPU_PRACTICE/cards');
     } else {
       alert('Неверно!');
     }
