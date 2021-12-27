@@ -20,7 +20,13 @@ const Checkboxes = () => {
 
   const onClick = (value: number) => {
     setValues(state => {
-      state.push(value);
+      if (state.some(elem => elem === value)) {
+        state = state.filter(elem => elem !== value);
+      } else {
+        console.log('add');
+        state.push(value);
+      }
+      
       return state
     })
   };
@@ -30,7 +36,7 @@ const Checkboxes = () => {
     newValues.sort((a, b) => a - b);
 
     if (newValues.join() === SUCCESS_VALUES.join()) {
-      navigate('/MGPU_PRACTICE/images');
+      navigate('/MGPU_PRACTICE/image');
     } else {
       alert('Неверно!');
     }
