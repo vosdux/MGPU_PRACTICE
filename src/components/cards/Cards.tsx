@@ -21,22 +21,21 @@ const Cards: FC = () => {
 
   useEffect(() => {
     const checkItems = () => {
-      if (firstChecked !== '' && secondChecked !== '') {
-        const firstValue = cards.find(elem => elem.id === firstChecked)?.value;
-        const secondValue = cards.find(elem => elem.id === secondChecked)?.value;
+      const firstValue = cards.find(elem => elem.id === firstChecked)?.value;
+      const secondValue = cards.find(elem => elem.id === secondChecked)?.value;
 
-        if (firstValue === secondValue) {
-          setChecked(value => {
-            return [...value, firstChecked, secondChecked];
-          });
-        }
-        setFirstChecked('');
-        setSecondChecked('');
+      if (firstValue === secondValue) {
+        setChecked(value => {
+          return [...value, firstChecked, secondChecked];
+        });
       }
+      setFirstChecked('');
+      setSecondChecked('');
     }
 
-    setTimeout(checkItems, 1000);
-
+    if (firstChecked !== '' && secondChecked !== '') {
+      setTimeout(checkItems, 1000);
+    }
   }, [firstChecked, secondChecked]);
 
   const getCardClass = (id: string) => {
