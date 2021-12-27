@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/MGPU_PRACTICE/static/css/main.7ddc0aca.chunk.css",
-    "main.js": "/MGPU_PRACTICE/static/js/main.a8759de1.chunk.js",
-    "main.js.map": "/MGPU_PRACTICE/static/js/main.a8759de1.chunk.js.map",
+    "main.js": "/MGPU_PRACTICE/static/js/main.fd363695.chunk.js",
+    "main.js.map": "/MGPU_PRACTICE/static/js/main.fd363695.chunk.js.map",
     "runtime-main.js": "/MGPU_PRACTICE/static/js/runtime-main.fc8466eb.js",
     "runtime-main.js.map": "/MGPU_PRACTICE/static/js/runtime-main.fc8466eb.js.map",
-    "static/js/2.e340191a.chunk.js": "/MGPU_PRACTICE/static/js/2.e340191a.chunk.js",
-    "static/js/2.e340191a.chunk.js.map": "/MGPU_PRACTICE/static/js/2.e340191a.chunk.js.map",
+    "static/js/2.0a69eab4.chunk.js": "/MGPU_PRACTICE/static/js/2.0a69eab4.chunk.js",
+    "static/js/2.0a69eab4.chunk.js.map": "/MGPU_PRACTICE/static/js/2.0a69eab4.chunk.js.map",
     "static/js/3.5ad0a7eb.chunk.js": "/MGPU_PRACTICE/static/js/3.5ad0a7eb.chunk.js",
     "static/js/3.5ad0a7eb.chunk.js.map": "/MGPU_PRACTICE/static/js/3.5ad0a7eb.chunk.js.map",
     "index.html": "/MGPU_PRACTICE/index.html",
     "static/css/main.7ddc0aca.chunk.css.map": "/MGPU_PRACTICE/static/css/main.7ddc0aca.chunk.css.map",
-    "static/js/2.e340191a.chunk.js.LICENSE.txt": "/MGPU_PRACTICE/static/js/2.e340191a.chunk.js.LICENSE.txt"
+    "static/js/2.0a69eab4.chunk.js.LICENSE.txt": "/MGPU_PRACTICE/static/js/2.0a69eab4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.fc8466eb.js",
-    "static/js/2.e340191a.chunk.js",
+    "static/js/2.0a69eab4.chunk.js",
     "static/css/main.7ddc0aca.chunk.css",
-    "static/js/main.a8759de1.chunk.js"
+    "static/js/main.fd363695.chunk.js"
   ]
 }
