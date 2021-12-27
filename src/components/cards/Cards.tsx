@@ -34,7 +34,7 @@ const Cards: FC = () => {
     }
 
     if (firstChecked !== '' && secondChecked !== '') {
-      setTimeout(checkItems, 1000);
+      setTimeout(checkItems, 100);
     }
   }, [firstChecked, secondChecked]);
 
@@ -48,6 +48,13 @@ const Cards: FC = () => {
 
   const onCardClick = (id: string) => {
     if (checked.some(elem => elem === id)) {
+      return false;
+    }
+
+    console.log(firstChecked);
+    console.log(secondChecked);
+
+    if (secondChecked) {
       return false;
     }
 
