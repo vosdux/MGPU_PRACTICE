@@ -1,3 +1,9 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
 .root {
   display: flex;
   flex-direction: column;

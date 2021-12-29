@@ -1,7 +1,7 @@
 import React from 'react';
-import { Routes, Route, BrowserRouter, Navigate, HashRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
 
-import DND from './pages/d-n-d/DND';
+import DragNDrop from './pages/drag-n-drop/DragNDrop';
 import CardsPage from './pages/cards/CardsPage';
 import TablePage from './pages/table-page/TablePage';
 import CheckboxPage from './pages/checkbox-page/CheckboxPage';
@@ -13,7 +13,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/MGPU_PRACTICE" element={<DND />} />
+        <Route path="/MGPU_PRACTICE" element={<DragNDrop />} />
         <Route path="/MGPU_PRACTICE/cards" element={<CardsPage />} />
         <Route path="/MGPU_PRACTICE/table" element={<TablePage />} />
         <Route path="/MGPU_PRACTICE/checkboxes" element={<CheckboxPage />} />
